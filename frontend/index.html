@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOps CI/CD Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">CI</div>
+        <div>
+          <h2>DevOps CI/CD</h2>
+          <p>Monitoring Panel</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#overview" class="nav-link active">Dashboard</a>
+        <a href="#analytics" class="nav-link">Analytics</a>
+        <a href="#repository" class="nav-link">Repository</a>
+        <a href="#pipelines" class="nav-link">Pipelines</a>
+        <a href="#insights" class="nav-link">Insights</a>
+      </nav>
+
+      <!-- <div class="sidebar-footer">
+        <p>College Project Version</p>
+        <span>Simple • Clean • Presentable</span>
+      </div> -->
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h1>DevOps CI/CD Monitoring Dashboard</h1>
+          <p>Track workflow runs, build health, and repository activity from any public GitHub repository.</p>
+        </div>
+      </header>
+
+      <section class="hero-card" id="overview">
+        <div class="hero-left">
+          <h2>Analyze GitHub Repository</h2>
+          <p>Paste any public GitHub repository URL to load workflow run statistics and CI/CD insights.</p>
+
+          <div class="repo-input-group">
+            <input
+              type="text"
+              id="repo"
+              placeholder="https://github.com/facebook/react"
+              value="https://github.com/facebook/react"
+            />
+            <button id="loadBtn" onclick="loadRepo()">Load Repository</button>
+          </div>
+
+          <div id="messageBox" class="message-box hidden"></div>
+        </div>
+
+        <div class="hero-right">
+          <div class="mini-stat">
+            <span class="mini-label">Current Repo</span>
+            <strong id="currentRepoName">Not loaded</strong>
+          </div>
+          <div class="mini-stat">
+            <span class="mini-label">Last Refresh</span>
+            <strong id="lastUpdated">--</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <p>Total Builds</p>
+          <h3 id="total">0</h3>
+          <span>Recent workflow runs fetched</span>
+        </div>
+
+        <div class="metric-card success-card">
+          <p>Success Builds</p>
+          <h3 id="success">0</h3>
+          <span>Completed successfully</span>
+        </div>
+
+        <div class="metric-card danger-card">
+          <p>Failed Builds</p>
+          <h3 id="failed">0</h3>
+          <span>Ended in failure</span>
+        </div>
+
+        <div class="metric-card">
+          <p>Success Rate</p>
+          <h3 id="successRate">0%</h3>
+          <span>Success vs total completed</span>
+        </div>
+      </section>
+
+      <section class="content-grid" id="analytics">
+        <div class="panel large-panel">
+          <div class="panel-header">
+            <h2>Build Activity</h2>
+            <p>Distribution of recent workflow runs by day</p>
+          </div>
+          <canvas id="activityChart"></canvas>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Status Breakdown</h2>
+            <p>Success, failure and other conclusions</p>
+          </div>
+          <canvas id="statusChart"></canvas>
+        </div>
+      </section>
+
+      <section class="content-grid" id="repository">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Repository Overview</h2>
+            <p>Basic details based on the URL and fetched runs</p>
+          </div>
+
+          <div class="repo-overview-grid">
+            <div class="info-box">
+              <span>Owner</span>
+              <strong id="repoOwner">--</strong>
+            </div>
+            <div class="info-box">
+              <span>Repository</span>
+              <strong id="repoName">--</strong>
+            </div>
+            <div class="info-box">
+              <span>Latest Workflow</span>
+              <strong id="latestWorkflow">--</strong>
+            </div>
+            <div class="info-box">
+              <span>Latest Status</span>
+              <strong id="latestStatus">--</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" id="insights">
+          <div class="panel-header">
+            <h2>Quick Insights</h2>
+            <p>Easy-to-understand project summary</p>
+          </div>
+
+          <div class="insight-list" id="insightList">
+            <div class="insight-item">Load a repository to generate CI/CD insights.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel full-width-panel" id="pipelines">
+        <div class="panel-header">
+          <h2>Recent Pipelines</h2>
+          <p>Status of the latest workflow runs</p>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Pipeline</th>
+                <th>Status</th>
+                <th>Branch</th>
+                <th>Event</th>
+                <th>Created Time</th>
+              </tr>
+            </thead>
+            <tbody id="runs">
+              <tr>
+                <td colspan="5" class="empty-state">No data loaded yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="bottom-panels">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Project Highlights</h2>
+            <p>Why this dashboard is useful</p>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature-box">
+              <h4>Public Repo Analysis</h4>
+              <p>Monitor CI/CD runs of public GitHub repositories using only the repo URL.</p>
+            </div>
+            <div class="feature-box">
+              <h4>Visual Monitoring</h4>
+              <p>Charts make workflow activity easier to understand during demos and presentations.</p>
+            </div>
+            <div class="feature-box">
+              <h4>Simple Stack</h4>
+              <p>Built with HTML, CSS, JavaScript, Node.js, Express, and GitHub Actions API.</p>
+            </div>
+            <div class="feature-box">
+              <h4>Presentation Friendly</h4>
+              <p>Clean dashboard layout with metrics, insights, and pipeline history in one place.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
