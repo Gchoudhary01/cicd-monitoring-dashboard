@@ -188,6 +188,6 @@ Open a Pull Request
 
 **Govardhan Choudhary**
 
-GitHub: https://github.com/yourusername
+GitHub: https://github.com/Gchoudhary01
 
-LinkedIn: https://linkedin.com/in/yourprofile
+LinkedIn: https://www.linkedin.com/in/govardhan-choudhary-22b550297/
