@@ -102,33 +102,24 @@ project/
 
 Clone the repository
 
-```bash
-git clone https://github.com/yourusername/cicd-dashboard.git
-```
+-> git clone https://github.com/yourusername/cicd-dashboard.git
 
 Go into project
 
-```bash
-cd cicd-dashboard
-```
+-> cd cicd-dashboard
 
 Install dependencies
 
-```bash
-npm install
-```
+-> npm install
 
 Start server
 
-```bash
-npm start
-```
+-> npm start
 
 Open
 
-```
-http://localhost:3000
-```
+-> http://localhost:3000
+
 
 ---
 
@@ -144,9 +135,9 @@ http://localhost:3000
 
 ## 🌐 API Endpoint
 
-```
+
 GET /api/github/summary?repoUrl=<GitHub Repo URL>
-```
+
 
 Returns
 
