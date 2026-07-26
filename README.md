@@ -139,7 +139,7 @@ Open
 GET /api/github/summary?repoUrl=<GitHub Repo URL>
 
 
-Returns
+Returns ↪️
 
 - Total Builds
 - Successful Builds
