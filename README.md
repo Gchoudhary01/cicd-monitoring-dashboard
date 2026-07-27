@@ -1,15 +1,3 @@
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-
-![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express)
-
-![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript)
-
-![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5)
-
-![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3)
-
-![GitHub API](https://img.shields.io/badge/GitHub_API-181717?style=for-the-badge&logo=github)
-
 # 🚀 CI/CD Monitoring Dashboard
 
 A web dashboard that monitors GitHub Actions workflows and displays CI/CD pipeline metrics such as total builds, successful builds, failed builds, success rate, and workflow history.
@@ -182,3 +170,15 @@ Open a Pull Request
 GitHub: https://github.com/Gchoudhary01
 
 LinkedIn: https://www.linkedin.com/in/govardhan-choudhary-22b550297/
+
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+
+![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express)
+
+![JavaScript](https://img.shields.io/badge/JavaScript-yellow?style=for-the-badge&logo=javascript)
+
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5)
+
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3)
+
+![GitHub API](https://img.shields.io/badge/GitHub_API-181717?style=for-the-badge&logo=github)
