@@ -1,6 +1,6 @@
 # 🚀 CI/CD Monitoring Dashboard
 
-A web dashboard that monitors GitHub Actions workflows and displays CI/CD pipeline metrics such as total builds, successful builds, failed builds, success rate, and workflow histry.
+A web dashboard that monitors GitHub Actions workflows and displays CI/CD pipeline metrics such as total builds, successful builds, failed builds, success rate, and workflow history.
 
 ---
 
