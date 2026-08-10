@@ -8,7 +8,7 @@ A web dashboard that monitors GitHub Actions workflows and displays CI/CD pipeli
 
 The CI/CD Monitoring Dashboard helps developers visualize GitHub Actions workflow statistics in a clean and interactive dashboard.
 
-Instead of manually checking GitHub Actions logs, users simply enter a repository URL and instantly see build metrics and charts.
+Instead of manually checking GitHub Actions logs, users simply enter a repository URL and instantly see build metrics and chart.
 
 ---
 
